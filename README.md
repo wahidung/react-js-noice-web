@@ -1,3 +1,7 @@
+Credits : 
+https://github.com/lijinke666/react-music-player
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
