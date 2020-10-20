@@ -36,7 +36,7 @@ export default class Album extends React.Component {
 
         this.setState({
           bannerArtist: data.detail.artist[0].name,
-          bannerImages: data.detail.artist[0].image,
+          bannerImages: data.detail.image,
           bannerNamePodcast: data.detail.title,
           podcasts: data.detail.audio,
           loading: false,

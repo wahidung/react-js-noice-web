@@ -17,11 +17,11 @@ body {
   position: relative;
   width: 80px;
   height: 80px;
-  margin-top: 40vh;
+  margin-top: 45vh;
 }
 .lds-ripple div {
   position: absolute;
-  border: 4px solid #fff;
+  border: 4px solid rgb(255, 215, 30);
   opacity: 1;
   border-radius: 50%;
   animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
@@ -135,4 +135,37 @@ a:hover {
 a {
   color: white;
   text-decoration: none;
+}
+
+/* OTHER */
+.progress-bar {
+  background-color: transparent;
+}
+.clickable {
+  cursor: pointer;
+}
+.react-jinke-music-player-main
+  .music-player-panel
+  .panel-content
+  .rc-slider-handle,
+.react-jinke-music-player-main
+  .music-player-panel
+  .panel-content
+  .rc-slider-track,
+.react-jinke-music-player-mobile-progress .rc-slider-handle,
+.react-jinke-music-player-mobile-progress .rc-slider-track,
+.react-jinke-music-player-mobile-play-model-tip {
+  background-color: rgb(255, 215, 30) !important;
+}
+.react-jinke-music-player-main svg:hover,
+.audio-lists-panel-content .audio-item.playing,
+.audio-lists-panel-content .audio-item.playing svg,
+.react-jinke-music-player .music-player-controller {
+  color: rgb(255, 215, 30) !important;
+}
+
+.react-jinke-music-player
+  .music-player-controller
+  .music-player-controller-setting {
+  background: #ffc10757 !important;
 }

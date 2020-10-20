@@ -1,6 +1,8 @@
-Credits : 
-https://github.com/lijinke666/react-music-player
+Demo App :
+https://wahidung.com/demo/noice
 
+Credits :
+https://github.com/lijinke666/react-music-player
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

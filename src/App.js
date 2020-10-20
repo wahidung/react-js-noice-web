@@ -6,11 +6,9 @@ import Album from "./pages/Album";
 
 export default function App() {
   return (
-    <div>
-      <Router>
-        <Route exact path="/" component={Artist}></Route>
-        <Route path="/album/:id" component={Album}></Route>
-      </Router>
-    </div>
+    <Router basename="/demo/noice">
+      <Route exact path="/" component={Artist}></Route>
+      <Route path="/album/:id" component={Album}></Route>
+    </Router>
   );
 }
