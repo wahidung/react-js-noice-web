@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
-import ReactJkMusicPlayer from "react-jinke-music-player";
-import "react-jinke-music-player/assets/index.css";
+// import ReactJkMusicPlayer from "react-jinke-music-player";
+// import "react-jinke-music-player/assets/index.css";
 import Banner from "./../components/Banner";
 import Podcast from "./../components/Podcast";
 import Footer from "./../layouts/Footer";
@@ -9,7 +9,8 @@ import Footer from "./../layouts/Footer";
 export default class Album extends React.Component {
   constructor(props) {
     super(props);
-    this.id = props.match.params.id;
+    // console.log(props.dataProps);
+    this.id = props.dataProps.match.params.id;
     this.state = {
       loading: true,
       bannerImages: "",
@@ -58,9 +59,17 @@ export default class Album extends React.Component {
   }
 
   handlePlay = (props) => {
-    this.setState({
+    // this.setState({
+    //   played: true,
+    //   playIndex: props,
+    // });
+
+    // console.log(this.state);
+
+    this.props.onPlayed({
       played: true,
       playIndex: props,
+      audioPlay: this.state.audioPlay,
     });
   };
 
@@ -69,7 +78,7 @@ export default class Album extends React.Component {
       <div className="container-podcast text-white mb-5 pb-4">
         {this.state.loading ? (
           <div id="loading">
-            <div class="lds-ripple">
+            <div className="lds-ripple">
               <div></div>
               <div></div>
             </div>
@@ -103,7 +112,7 @@ export default class Album extends React.Component {
           ))}
         </div>
         <Footer />
-        {this.state.played ? (
+        {/* {this.state.played ? (
           <ReactJkMusicPlayer
             audioLists={this.state.audioPlay}
             mode="full"
@@ -119,7 +128,7 @@ export default class Album extends React.Component {
           />
         ) : (
           ""
-        )}
+        )} */}
       </div>
     );
   }

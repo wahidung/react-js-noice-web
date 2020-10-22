@@ -94,7 +94,7 @@ export default class Artist extends React.Component {
       <div className="container-podcast text-white" id="page-artist">
         {this.state.loading ? (
           <div id="loading">
-            <div class="lds-ripple">
+            <div className="lds-ripple">
               <div></div>
               <div></div>
             </div>
@@ -115,7 +115,7 @@ export default class Artist extends React.Component {
         </div>
         <div className="list-album">
           {this.state.albumNewRelase.map((album) => (
-            <Link to={"/album/" + album.id}>
+            <Link key={album.id} to={"/album/" + album.id}>
               <Album
                 images={album.image}
                 title={album.title}
@@ -132,7 +132,7 @@ export default class Artist extends React.Component {
         </div>
         <div className="list-album">
           {this.state.albumByName.map((album) => (
-            <Link to={"/album/" + album.id}>
+            <Link key={album.id} to={"/album/" + album.id}>
               <Album
                 images={album.image}
                 title={album.title}
