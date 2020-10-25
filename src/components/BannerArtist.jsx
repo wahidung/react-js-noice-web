@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function formatNumber(angka, prefix) {
   var separator = "",
@@ -29,8 +30,18 @@ const BannerArtist = (props) => {
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
-      ></div>
-      <div className="row">
+      >
+        <div className="row">
+          <div className="col-md-12">
+            <div className="back">
+              <Link to="/">
+                <div>{"<"} Back</div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-4">
         <div className="col-md-12 text-center">
           <h1>{props.nameArtist}</h1>
           <p>{formatNumber(String(props.follower), ".")} followerss</p>

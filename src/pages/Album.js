@@ -1,7 +1,5 @@
 import React from "react";
 import axios from "axios";
-// import ReactJkMusicPlayer from "react-jinke-music-player";
-// import "react-jinke-music-player/assets/index.css";
 import Banner from "./../components/Banner";
 import Podcast from "./../components/Podcast";
 import Footer from "./../layouts/Footer";
@@ -9,12 +7,12 @@ import Footer from "./../layouts/Footer";
 export default class Album extends React.Component {
   constructor(props) {
     super(props);
-    // console.log(props.dataProps);
     this.id = props.dataProps.match.params.id;
     this.state = {
       loading: true,
       bannerImages: "",
       bannerNamePodcast: "",
+      idArtist: "",
       bannerArtist: "",
       podcasts: [],
       played: false,
@@ -36,6 +34,7 @@ export default class Album extends React.Component {
         let playList = [];
 
         this.setState({
+          idArtist: data.detail.artist[0].id,
           bannerArtist: data.detail.artist[0].name,
           bannerImages: data.detail.image,
           bannerNamePodcast: data.detail.title,
@@ -47,11 +46,11 @@ export default class Album extends React.Component {
           playList.push({
             name: podcast.title,
             singer: podcast.artist[0].name,
-            cover: podcast.image,
+            cover:
+              podcast.image === null ? this.state.bannerImages : podcast.image,
             musicSrc: podcast.file[0].raw_key,
           })
         );
-
         this.setState({
           audioPlay: playList,
         });
@@ -59,13 +58,6 @@ export default class Album extends React.Component {
   }
 
   handlePlay = (props) => {
-    // this.setState({
-    //   played: true,
-    //   playIndex: props,
-    // });
-
-    // console.log(this.state);
-
     this.props.onPlayed({
       played: true,
       playIndex: props,
@@ -87,6 +79,7 @@ export default class Album extends React.Component {
           ""
         )}
         <Banner
+          idArtist={this.state.idArtist}
           artist={this.state.bannerArtist}
           images={this.state.bannerImages}
           namePodcast={this.state.bannerNamePodcast}
@@ -101,7 +94,11 @@ export default class Album extends React.Component {
               onClick={() => this.handlePlay(i)}
             >
               <Podcast
-                images={podcast.image}
+                images={
+                  podcast.image === null
+                    ? this.state.bannerImages
+                    : podcast.image
+                }
                 title={podcast.title}
                 descriptions={podcast.descriptions}
                 date={podcast.created_at}
@@ -112,23 +109,6 @@ export default class Album extends React.Component {
           ))}
         </div>
         <Footer />
-        {/* {this.state.played ? (
-          <ReactJkMusicPlayer
-            audioLists={this.state.audioPlay}
-            mode="full"
-            autoPlay={true}
-            showDownload={false}
-            showReload={false}
-            // toggleMode={false}
-            showThemeSwitch={false}
-            remove={false}
-            glassBg={true}
-            playIndex={this.state.playIndex}
-            // clearPriorAudioLists={true}
-          />
-        ) : (
-          ""
-        )} */}
       </div>
     );
   }

@@ -15,7 +15,7 @@ const Banner = (props) => {
       <div className="row">
         <div className="col-md-12">
           <div className="back">
-            <Link to="/">
+            <Link to={"/artist/" + props.idArtist}>
               <div>{"<"} Back</div>
             </Link>
           </div>

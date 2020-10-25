@@ -26,14 +26,21 @@ function formatDate(nowDate) {
 }
 
 function formatDuration(duration) {
-  const m = Math.floor((duration % 3600) / 60)
+  const h = Math.floor(duration / (60 * 60))
+      .toString()
+      .padStart(2, "0"),
+    m = Math.floor((duration % 3600) / 60)
       .toString()
       .padStart(2, "0"),
     s = Math.floor(duration % 60)
       .toString()
       .padStart(2, "0");
 
-  return m + "m " + s + "d";
+  if (h !== "00") {
+    return h + "h " + m + "m " + s + "d";
+  } else {
+    return m + "m " + s + "d";
+  }
 }
 
 const Podcast = (props) => {

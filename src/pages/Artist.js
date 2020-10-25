@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 export default class Artist extends React.Component {
   constructor(props) {
     super(props);
+    this.id = props.match.params.id;
     this.state = {
       loading: true,
       bannerImages: "",
@@ -24,7 +25,7 @@ export default class Artist extends React.Component {
 
     //Detail Artist
     axios
-      .get("https://api.noice.id/artist/GELe3wne69", {
+      .get("https://api.noice.id/artist/" + this.id, {
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -41,11 +42,14 @@ export default class Artist extends React.Component {
 
     //Follower
     axios
-      .get("https://api.noice.id/artist/GELe3wne69/follower?page=1&limit=1", {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
+      .get(
+        "https://api.noice.id/artist/" + this.id + "/follower?page=1&limit=1",
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      )
       .then((res) => {
         const data = res.data.data;
         this.setState({
@@ -56,7 +60,9 @@ export default class Artist extends React.Component {
     //List Album Baru Release
     axios
       .get(
-        "https://api.noice.id/search?q=&artist_id=GELe3wne69&sort=release_date%3Adesc&page=1&type=catalog%2Ccatalog_podcast&limit=3",
+        "https://api.noice.id/search?q=&artist_id=" +
+          this.id +
+          "&sort=release_date%3Adesc&page=1&type=catalog%2Ccatalog_podcast&limit=3",
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -73,7 +79,9 @@ export default class Artist extends React.Component {
     //List Album Berdasarkan Nama
     axios
       .get(
-        "https://api.noice.id/search?q=&artist_id=GELe3wne69&sort=title%3Aasc&page=1&type=catalog%2Ccatalog_podcast&limit=3",
+        "https://api.noice.id/search?q=&artist_id=" +
+          this.id +
+          "&sort=title%3Aasc&page=1&type=catalog%2Ccatalog_podcast&limit=3",
         {
           headers: {
             Authorization: "Bearer " + token,
