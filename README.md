@@ -1,6 +1,8 @@
 Demo App :
 https://wahidung.com/demo/noice
 
+<a href="https://postimg.cc/PNdbXBFH" target="_blank"><img src="https://i.postimg.cc/PNdbXBFH/wahidung-com-demo-noice-Pixel-2.png" alt="wahidung-com-demo-noice-Pixel-2"/></a> <a href="https://postimg.cc/Wh25yDPM" target="_blank"><img src="https://i.postimg.cc/Wh25yDPM/wahidung-com-demo-noice-Pixel-2-1.png" alt="wahidung-com-demo-noice-Pixel-2-1"/></a> <a href="https://postimg.cc/Kk2PgVGn" target="_blank"><img src="https://i.postimg.cc/Kk2PgVGn/wahidung-com-demo-noice-Pixel-2-2.png" alt="wahidung-com-demo-noice-Pixel-2-2"/></a> <a href="https://postimg.cc/CBsjCN59" target="_blank"><img src="https://i.postimg.cc/CBsjCN59/wahidung-com-demo-noice-Pixel-2-3.png" alt="wahidung-com-demo-noice-Pixel-2-3"/></a> <a href="https://postimg.cc/FkF0TLJz" target="_blank"><img src="https://i.postimg.cc/FkF0TLJz/wahidung-com-demo-noice-Pixel-2-4.png" alt="wahidung-com-demo-noice-Pixel-2-4"/></a> 
+
 Credits :
 https://github.com/lijinke666/react-music-player
 
